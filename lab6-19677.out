@@ -1,0 +1,58 @@
+Device: cuda
+GPU: NVIDIA GeForce RTX 4090
+Classes: ['Cardboard', 'Food Organics', 'Glass', 'Metal', 'Miscellaneous Trash', 'Paper', 'Plastic', 'Textile Trash', 'Vegetation']
+Training images: 3326
+Test images: 1426
+Seed=42, epochs=10, batch size=32
+Image size: 200x200
+Questions 1-2: Adam lr=0.001
+Question 4: Adam lr=0.0001
+
+[Question 1] baseline CNN
+Epoch 01: train loss=1.7430, test accuracy=51.54%
+Epoch 02: train loss=1.2421, test accuracy=58.35%
+Epoch 03: train loss=1.0420, test accuracy=60.87%
+Epoch 04: train loss=0.8317, test accuracy=61.64%
+Epoch 05: train loss=0.6887, test accuracy=61.99%
+Epoch 06: train loss=0.5455, test accuracy=63.53%
+Epoch 07: train loss=0.4212, test accuracy=64.24%
+Epoch 08: train loss=0.3352, test accuracy=63.53%
+Epoch 09: train loss=0.2670, test accuracy=65.43%
+Epoch 10: train loss=0.2085, test accuracy=61.85%
+Final test accuracy: 61.85%
+
+[Question 2] modified CNN
+Epoch 01: train loss=3.5870, test accuracy=44.46%
+Epoch 02: train loss=1.3292, test accuracy=54.14%
+Epoch 03: train loss=1.1460, test accuracy=50.56%
+Epoch 04: train loss=0.8036, test accuracy=58.56%
+Epoch 05: train loss=0.6552, test accuracy=55.54%
+Epoch 06: train loss=0.4757, test accuracy=56.31%
+Epoch 07: train loss=0.3298, test accuracy=62.20%
+Epoch 08: train loss=0.2974, test accuracy=60.38%
+Epoch 09: train loss=0.2374, test accuracy=59.12%
+Epoch 10: train loss=0.2748, test accuracy=60.24%
+Final test accuracy: 60.24%
+
+[Question 3] Compare baseline and modified CNN
+baseline: final training loss=0.2085
+Clean=61.85%, blurred=49.86%, drop=11.99 percentage points
+modified: final training loss=0.2748
+Clean=60.24%, blurred=52.45%, drop=7.78 percentage points
+Loss plot: results/q3_comparison.png
+
+[Question 4] Fine-tune pretrained ResNet-18
+ImageNet weights; all layers are trainable.
+Epoch 01: train loss=0.8998, test accuracy=83.45%
+Epoch 02: train loss=0.2899, test accuracy=85.76%
+Epoch 03: train loss=0.1355, test accuracy=89.13%
+Epoch 04: train loss=0.0809, test accuracy=88.15%
+Epoch 05: train loss=0.0560, test accuracy=87.73%
+Epoch 06: train loss=0.0378, test accuracy=88.85%
+Epoch 07: train loss=0.0274, test accuracy=89.55%
+Epoch 08: train loss=0.0250, test accuracy=89.13%
+Epoch 09: train loss=0.0337, test accuracy=88.15%
+Epoch 10: train loss=0.0455, test accuracy=87.10%
+Final test accuracy: 87.10%
+
+Finished.

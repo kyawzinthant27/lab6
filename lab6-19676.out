@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/storage/slurm/home/68070701622@cpe.kmutt.ac.th/deep_learning/src/lab6/lab6.py", line 4, in <module>
+srun: error: gpu01.slurm.cpe.kmutt.ac.th: task 0: Exited with exit code 1
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
